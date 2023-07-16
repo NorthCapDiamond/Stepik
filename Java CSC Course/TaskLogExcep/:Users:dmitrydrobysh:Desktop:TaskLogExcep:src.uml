@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/dmitrydrobysh/Desktop/TaskLogExcep/src</OriginalElement>
+  <nodes>
+    <node x="208.125" y="166.0">MailMessage</node>
+    <node x="382.125" y="166.0">MailPackage</node>
+    <node x="45.125" y="166.0">MailService</node>
+    <node x="117.54380341880344" y="0.0">Sendable</node>
+    <node x="0.0" y="248.0">RealMailService</node>
+    <node x="209.79380341880344" y="82.0">AbstractSendable</node>
+    <node x="427.4807692307693" y="82.0">Package</node>
+    <node x="326.49465811965814" y="248.0">Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="RealMailService" target="Sendable" relationship="DEPENDENCY">
+      <point x="-44.25" y="-15.0" />
+      <point x="44.25" y="222.0" />
+      <point x="34.625" y="222.0" />
+      <point x="34.625" y="61.0" />
+      <point x="73.04380341880344" y="61.0" />
+      <point x="73.04380341880344" y="51.0" />
+      <point x="149.04380341880344" y="51.0" />
+      <point x="-31.5" y="15.0" />
+    </edge>
+    <edge source="Main" target="Package" relationship="CREATE">
+      <point x="0.0" y="-15.0" />
+      <point x="371.49465811965814" y="222.0" />
+      <point x="542.625" y="222.0" />
+      <point x="542.625" y="139.0" />
+      <point x="526.6474358974358" y="139.0" />
+      <point x="39.66666666666663" y="15.0" />
+    </edge>
+    <edge source="MailPackage" target="Package" relationship="TO_ONE">
+      <point x="50.0" y="-15.0" />
+      <point x="507.125" y="139.0" />
+      <point x="486.9807692307693" y="139.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="MailPackage" target="Package" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.0" />
+      <point x="457.125" y="139.0" />
+      <point x="447.3141025641026" y="139.0" />
+      <point x="-39.66666666666666" y="15.0" />
+    </edge>
+    <edge source="Main" target="MailService" relationship="CREATE">
+      <point x="0.0" y="-15.0" />
+      <point x="371.49465811965814" y="222.0" />
+      <point x="152.375" y="222.0" />
+      <point x="35.75" y="15.0" />
+    </edge>
+    <edge source="RealMailService" target="MailService" relationship="REALIZATION">
+      <point x="44.25" y="-15.0" />
+      <point x="132.75" y="222.0" />
+      <point x="80.875" y="222.0" />
+      <point x="-35.75" y="15.0" />
+    </edge>
+    <edge source="MailPackage" target="AbstractSendable" relationship="GENERALIZATION">
+      <point x="-50.0" y="-15.0" />
+      <point x="407.125" y="139.0" />
+      <point x="305.79380341880346" y="139.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="MailService" target="Sendable" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.0" />
+      <point x="116.625" y="61.0" />
+      <point x="73.04380341880344" y="61.0" />
+      <point x="73.04380341880344" y="51.0" />
+      <point x="149.04380341880344" y="51.0" />
+      <point x="-31.5" y="15.0" />
+    </edge>
+    <edge source="AbstractSendable" target="Sendable" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="305.79380341880346" y="61.0" />
+      <point x="212.04380341880344" y="61.0" />
+      <point x="31.5" y="15.0" />
+    </edge>
+    <edge source="Main" target="MailMessage" relationship="CREATE">
+      <point x="0.0" y="-15.0" />
+      <point x="371.49465811965814" y="222.0" />
+      <point x="285.125" y="222.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Main" target="MailPackage" relationship="CREATE">
+      <point x="0.0" y="-15.0" />
+      <point x="371.49465811965814" y="222.0" />
+      <point x="457.125" y="222.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="MailMessage" target="AbstractSendable" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="285.125" y="139.0" />
+      <point x="305.79380341880346" y="139.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="273.5" y="139.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

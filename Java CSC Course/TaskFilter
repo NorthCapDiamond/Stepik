@@ -1,0 +1,94 @@
+/**  link for the task: https://stepik.org/lesson/14513/step/9?unit=4147  */
+public class TaskFilter {
+
+    public enum Label {
+        SPAM,
+        NEGATIVE_TEXT,
+        TOO_LONG,
+        OK
+    }
+
+    public interface TextAnalyzer{
+        Label processText(String text);
+    }
+
+    abstract static class KeywordAnalyzer implements TextAnalyzer{
+        abstract protected String[] getKeywords();
+        abstract protected Label getLabel();
+        @Override
+        public Label processText(String text){
+            for (String keys : getKeywords()) {
+                if(text.contains(keys)){
+                    return getLabel();
+                }
+            }
+            return Label.OK;
+        }
+    }
+
+    class SpamAnalyzer extends KeywordAnalyzer{
+
+        private String[] keywords;
+        public SpamAnalyzer(String[] keywords){
+            this.keywords = keywords;
+        }
+
+        @Override
+        protected String[] getKeywords() {
+            return keywords;
+        }
+
+        @Override
+        protected Label getLabel() {
+            return Label.SPAM;
+        }
+    }
+
+
+    class NegativeTextAnalyzer extends KeywordAnalyzer{
+
+        public String[] words = new String[]{":(", "=(", ":|"};
+        public NegativeTextAnalyzer(){}
+
+        @Override
+        protected String[] getKeywords() {
+            return words;
+        }
+
+        @Override
+        protected Label getLabel() {
+            return Label.NEGATIVE_TEXT;
+        }
+    }
+
+
+    class TooLongTextAnalyzer implements TextAnalyzer{
+
+        private int maxLength;
+        public  TooLongTextAnalyzer(int maxLength){
+            this.maxLength=maxLength;
+        }
+        @Override
+        public Label processText(String text){
+            if(text.length()>maxLength){
+                return Label.TOO_LONG;
+            }
+            else {
+                return Label.OK;
+            }
+        }
+
+        Label getLabel(){
+            return Label.TOO_LONG;
+        }
+    }
+
+
+    public Label checkLabels(TextAnalyzer[] analyzers, String text) {
+        for (TextAnalyzer analyzer : analyzers) {
+            if(!analyzer.processText(text).equals(Label.OK))
+                return analyzer.processText(text);
+        }
+        return Label.OK;
+    }
+}
